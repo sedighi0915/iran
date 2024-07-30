@@ -13,7 +13,7 @@ read -p "آدرس IP سرور خارجی: " external_ip
 # ایجاد فایل /etc/rc.local با تنظیمات مربوطه
 echo "#!/bin/bash
 
-ip tunnel add 6to4tun_KH mode sit remote \$(hostname -I | awk '{print \$1}') local ${external_ip} ttl 255
+ip tunnel add 6to4tun_KH mode sit remote ${external_ip} local \$(hostname -I | awk '{print \$1}') ttl 255
 ip link set 6to4tun_KH up
 ip addr add 2001:470:1f10:e${server_number}f::2/64 dev 6to4tun_KH
 
