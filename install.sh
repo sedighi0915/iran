@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# حذف رابط های اضافی
+ip link delete sit0 2>/dev/null
+ip link delete 6to4tun_KH 2>/dev/null
+ip link delete ip6tnl0 2>/dev/null
+ip link delete ip6gre0 2>/dev/null
+ip link delete GRE6Tun_KH 2>/dev/null
+
 # پرسیدن شماره سرور
 read -p "سرور چند؟ (مثلاً 1): " server_number
 
